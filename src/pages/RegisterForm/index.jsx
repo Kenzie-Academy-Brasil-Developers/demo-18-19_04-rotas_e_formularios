@@ -1,11 +1,10 @@
 import Container from "../../components/Container";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
+import { yupResolver } from "@hookform/resolvers/";
 import api from "../../services/api";
 import { toast } from "react-toastify";
 import { useHistory } from "react-router-dom";
-import { Link } from "react-router-dom";
 
 const RegisterForm = ({ setUser }) => {
   const history = useHistory();
@@ -24,6 +23,7 @@ const RegisterForm = ({ setUser }) => {
     bio: yup.string().required("Campo obrigatório"),
     contact: yup.string().required("Campo obrigatório"),
     course_module: yup.string().required("Campo obrigatório"),
+    date: yup.date().default(),
   });
 
   const {

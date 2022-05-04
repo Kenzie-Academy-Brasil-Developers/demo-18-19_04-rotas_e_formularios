@@ -17,8 +17,6 @@ function App() {
         draggable
         pauseOnHover
       />
-      {/* Same as */}
-      <ToastContainer />
       <Routes />;
     </>
   );

@@ -9,12 +9,14 @@ import { useState } from "react";
 
 const Routes = () => {
   const [user, setUser] = useState({});
+  const [token, setToken] = useState("");
+
   return (
     <Switch>
       <Route exact path="/" component={Home} />
 
       <Route path="/login">
-        <Login user={user} />
+        <Login setUser={setUser} setToken={setToken} />
       </Route>
 
       <Route exact path="/users" component={Users} />
